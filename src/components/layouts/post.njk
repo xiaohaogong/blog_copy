@@ -1,0 +1,25 @@
+{% extends 'layouts/base.njk' %}
+{% from "../tag-list.njk" import tagList %}
+
+{% block head %}
+  {% if config.syntaxTheme %}
+    <link rel="stylesheet" href="/assets/css/{{ config.syntaxTheme }}" />
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <main tabindex="-1" class="BaseLayout">
+    <section class="BaseLayout__LeftSide">
+      {% include "header.njk" %}
+    </section>
+    <article class="PostContent">
+      <header class="PostContent__Header">
+        {% if title %}
+          <h1>{{ title }}</h1>
+        {% endif %}
+        {{ tagList(tags) }}
+      </header>
+      {{content | safe}}
+    </article>
+  </main>
+{% endblock %}

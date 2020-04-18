@@ -1,0 +1,20 @@
+{
+  "name": "xiaohaogong",
+  "shortDesc": "Love Open Source Design.",
+  "url": "https://gonghao.me",
+  "lang": "en",
+  "authorHandle": "@xiaohaogong",
+  "authorName": "Evan",
+  "paymentPointer": "$twitter.xrptipbot.com/equinusocio",
+  "syntaxTheme": "prism-mono.css",
+  "permalinkClass": ["Permalink"],
+  "iframeClass": ["IframesWrapper", "Bleeding"],
+  "codeClass": ["CodeWrapper", "Bleeding"],
+  "figureClass": ["Figure", "Bleeding"],
+  "paths": {
+    "src": "src",
+    "blogdir": "blog",
+    "includes": "components",
+    "output": "dist"
+  }
+}

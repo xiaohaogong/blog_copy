@@ -1,0 +1,15 @@
+---
+metaTitle: Evan Gong
+metaDesc: Open Source Design.
+---
+{% extends 'layouts/page.njk' %}
+{% from "post-list.njk" import postList %}
+
+{% block leftContent %}
+  <p class="PageDescription">I’m Evan. I work as <em>Lego</em>, <em>designer</em> and <em>open source developer</em>. Photographer in my spare time.</p>
+  {% include "./components/socials.njk" %}
+{% endblock leftContent %}
+
+{% block rightContent %}
+  {{ postList(collections.posts) }}
+{% endblock rightContent %}

@@ -1,0 +1,18 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+  <main tabindex="-1" class="BaseLayout" data-display="grid">
+    <section class="BaseLayout__LeftSide">
+      <div class="BaseLayout__Sticker">
+        {% include "header.njk" %}
+        {% if title %}
+          <h1>{{ title }}</h1>
+        {% endif %}
+        {% block leftContent %}{% endblock leftContent %}
+      </div>
+    </section>
+    <section class="BaseLayout__RightSide">
+      {% block rightContent %}{% endblock rightContent %}
+    </section>
+  </main>
+{% endblock %}

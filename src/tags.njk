@@ -1,0 +1,25 @@
+---
+metaTitle: Tag
+description: Categories page description
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - js
+    - all
+    - posts
+permalink: /tags/{{ tag | slug }}/
+---
+{% extends 'layouts/page.njk' %}
+{% from "post-list.njk" import postList %}
+
+{% block leftContent %}
+  <h1 style="margin-bottom: 0;">#{{tag}}</h1>
+  <p>{{ collections[tag].length }} articles published</p>
+  {% include "./components/socials.njk" %}
+{% endblock leftContent %}
+
+{% block rightContent %}
+  {{ postList(collections[tag]) }}
+{% endblock rightContent %}
