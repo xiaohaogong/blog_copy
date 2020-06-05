@@ -1,6 +1,6 @@
 ---
 title: thoughts on lego education.
-date: '2020-6-5'
+date: '2019-10-20'
 metaDesc: "A little thought about LEGO education"
 socialImage: true
 tags:
