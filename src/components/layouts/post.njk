@@ -1,5 +1,6 @@
 {% extends 'layouts/base.njk' %}
 {% from "../tag-list.njk" import tagList %}
+{% from "../post-navigation.njk" import postNavigation %}
 
 {% block head %}
   {% if config.syntaxTheme %}
@@ -14,12 +15,18 @@
     </section>
     <article class="PostContent">
       <header class="PostContent__Header">
-        {% if title %}
-          <h1>{{ title }}</h1>
-        {% endif %}
+        <div class="PostContent__SubHeader">
+          {% if title %}
+            <h1>{{ title }}</h1>
+          {% endif %}
+          <small>{{ content | readingTime }} minutes read</small>
+        </div>
         {{ tagList(tags) }}
       </header>
       {{content | safe}}
+      {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+      {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+      {{ postNavigation(previousPost, nextPost) }}
     </article>
   </main>
 {% endblock %}
