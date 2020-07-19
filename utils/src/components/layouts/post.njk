@@ -1,0 +1,32 @@
+{% extends 'layouts/base.njk' %}
+{% from "../tag-list.njk" import tagList %}
+{% from "../post-navigation.njk" import postNavigation %}
+
+{% block head %}
+  {% if config.syntaxTheme %}
+    <link rel="stylesheet" href="/assets/css/{{ config.syntaxTheme }}" />
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <main tabindex="-1" class="BaseLayout">
+    <section class="BaseLayout__LeftSide">
+      {% include "header.njk" %}
+    </section>
+    <article class="PostContent">
+      <header class="PostContent__Header">
+        <div class="PostContent__SubHeader">
+          {% if title %}
+            <h1>{{ title }}</h1>
+          {% endif %}
+          <small>{{ content | readingTime }} minutes read</small>
+        </div>
+        {{ tagList(tags) }}
+      </header>
+      {{content | safe}}
+      {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+      {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+      {{ postNavigation(previousPost, nextPost) }}
+    </article>
+  </main>
+{% endblock %}

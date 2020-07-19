@@ -1,0 +1,15 @@
+---
+metaTitle: Mattia Astorino
+metaDesc: UX Engineer in Milan and member of Open Source Design.
+---
+{% extends 'layouts/page.njk' %}
+{% from "post-list.njk" import postList %}
+
+{% block leftContent %}
+  <p class="PageDescription">I’m Mattia Astorino. I work as <em>UX Engineer</em>, <em>designer</em> and <em>open source developer</em>. Photographer in my spare time.</p>
+  {% include "./components/socials.njk" %}
+{% endblock leftContent %}
+
+{% block rightContent %}
+  {{ postList(collections.posts) }}
+{% endblock rightContent %}
