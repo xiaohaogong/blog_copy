@@ -3,7 +3,7 @@
 
 # TEAM
 
-    Mattia Astorino -- Designer & Developer -- @equinusocio
+    EvanGong -- Designer & Developer -- @xiaohaogong
 
 # TECHNOLOGY COLOPHON
 
