@@ -32,7 +32,7 @@ EV3巡线编程测试
 
 ## PID巡线
 
-    _PID控制器--比例-微分-积分控制器_
+_PID控制器--比例-微分-积分控制器_
 
 和比例控制器一样,PID控制器也是用颜色传感器读数来调整起到控制作用的变量,也就是转向值.
 
@@ -58,7 +58,7 @@ EV3巡线编程测试
      ![标准化值](https://i.loli.net/2020/07/19/G3jCR7wqg4EYVtP.png)
      之前写到过 转向值=误差值*增益值。
     这里我们将增益值记为Kp，这里就是PID里的P部分。
-    PID里的转向值，转向值=误差*Kp+微分*Kd+积分*Ki。
+    PID里的转向值，转向值=误差Kp+微分✖Kd+积分✖Ki。
     误差：Error，微分：Weifen，积分：Jifen。
     Weifen=Error-上一个Error。新的Jifen=0.5*Jifen+Error。
 ![微分项](https://i.loli.net/2020/07/19/UN1o8kKGdMvzx9c.png)
